@@ -1,9 +1,9 @@
 # Sort Katas
 ## Bubble Sort
 *Time Complexity*
-| Worst-Case | Average | Best |
-|:----------:|:-------:|:----:|
-|   O(n^2)   |  O(n^2) | O(n) |
+ Worst-Case | Average | Best 
+----------|-------|----
+   O(n^2)   |  O(n^2) | O(n) 
 
 ######Challenge
 Given an array, sort the elements using the Bubble sort method.
@@ -26,9 +26,9 @@ console.log(bubbleSort());
 
 ## Selection Sort
 *Time Complexity*
-| Worst-Case | Average | Best |
-|:----------:|:-------:|:----:|
-|   O(n^2)   |  O(n^2) |O(n^2)|
+ Worst-Case | Average | Best 
+----------|-------|----
+   O(n^2)   |  O(n^2) |O(n^2)
 
 ######Challenge
 Given an array of positive integers, sort the elements using selection sort.
@@ -51,9 +51,9 @@ console.log(selectionSort());
 
 ## Insertion Sort
 *Time Complexity*
-| Worst-Case | Average | Best |
-|:----------:|:-------:|:----:|
-|   O(n^2)   |  O(n^2) | O(n) |
+ Worst-Case | Average | Best 
+----------|-------|----
+   O(n^2)   |  O(n^2) | O(n) 
 
 ######Challenge
 Given an array of positive integers, sort the elements using insertion sort.
@@ -74,9 +74,9 @@ console.log(insertion());
 ```
 ## Merge Sort
 *Time Complexity*
-|  Worst-Case  |   Average    |     Best     |
-|:------------:|:------------:|:------------:|
-| O(n (log(n)) | O(n (log(n)) | O(n (log(2)) |
+ Worst-Case  |   Average    |     Best     
+------------|------------|------------
+ O(n (log(n)) | O(n (log(n)) | O(n (log(2)) 
 
 ######Challenge
 Given an array of positive integers, sort the elements using merge sort.
@@ -115,9 +115,9 @@ console.log(`The sorted array is: ${mergeSort()}`);
 
 ## Quick Sort
 *Time Complexity*
-|  Worst-Case  |   Average    |  Best  |
-|:------------:|:------------:|:------:|
-| O(n (log(n)) | O(n (log(n)) | O(n^2) |
+  Worst-Case  |   Average    |  Best 
+------------|------------|------
+ O(n (log(n)) | O(n (log(n)) | O(n^2)
 
 *Challenge*
 Given an array of positive integers, sort the elements using quick sort.
