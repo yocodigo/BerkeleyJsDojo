@@ -93,9 +93,7 @@ Since were aim to sort half of an array, we can conclude the time complexity for
 
 5. You can partition the array and treat the elements on either side of p as their own sub array.
 
-6. (insert edge case notes here)
-
-7. (^^specify which step covers quicksort function and which part covers the partition function)
+6. Illustration for each passthru:
 
      1st Passthru                       [4, 8, 3, 45, 5, 2, 1, (6)]  // partition around 6
                                          ^    /           \ ^
