@@ -85,24 +85,39 @@ Since were aim to sort half of an array, we can conclude the time complexity for
 
 1. Choose an arbitrary number in a given array to be your pivot. The pivot is an element, p, that will be used to determine where to partition the array.
 
-2. Create a left variable and right variable. The left variable will be used as a pointer starting at the left most index of the array.It will be used to compare the element at the current index with the element at the pivot. If the left pointer's value is less than the pivot value, it will move to the right by one, otherwise, it will stop. The same basic operation happens but in reverse. With the right variable(pointer), moves over to the left by one if the current index' element is greater than the pivot and stops if it is smaller. 
+2. Create a *left* variable and *right* variable. The *left* variable will be used as a pointer starting at the left most index of the array. It will be used to compare the element it is currently point at with the element at the pivot. If the *left* pointer's element is less than the pivot element, it will move to the right by one, otherwise, it will stop. For the *right* pointer, the same basic operation happens but in reverse. If the element at *right* pointer is greater than the pivot it will move by one to the left, otherwise, it doesn't move.
 
-3. When both pointers have stopped, the left pointer swaps values with the right pointer.
+3. When both pointers have stopped, the *left* pointer swaps elements with the *right* pointer.
 
-4. The process repeats itself until both pointers are pointing to the same value and the value is greater than the pivot. Swap this value with the pivot value. P is now in the correct index. Everything to the left, is less than its value and everything to the right is greater than its value.
+4. The process repeats itself until *left* and *right* are pointing at the same element and the element is greater than the pivot. Swap this element with the pivot element. P is now in the correct index. Everything to the left, is less than its element and everything to the right is greater than its element.
 
-5. You can partition the array and treat the values on either side of p as their own sub array.
+5. You can partition the array and treat the elements on either side of p as their own sub array.
 
 6. (insert edge case notes here)
 
 7. (^^specify which step covers quicksort function and which part covers the partition function)
 
-                                        [4, 8, 3, 45, 5, 2, 1, (6)]  // partition around 6
+     1st Passthru                       [4, 8, 3, 45, 5, 2, 1, (6)]  // partition around 6
+                                         ^    /           \ ^
+                                         l   /             \r
                                             /               \
                                            /                 \
-                           [4, 1, 3, 2, (5)] // partition    [8, 45] 
-                                        /     around 5         
-                                       /                        
+     2nd Passthru          [4, 1, 3, 2, (5)] // partition    [8, 45] 
+                            ^         ^ /     around 5         
+                            l         r/ 
+                                      /
+     3rd Passthru        [2, 1, 3, (4)]      *[5, 6, 8, 45]*               
+                          ^     ^   /
+                          l     r  /
+                                  /                       
+     4th Passthru       [2, 1, (3)]         *[4, 5, 6, 8, 45]*
+                         ^  ^   /
+                         l  r  /
+                              /
+     5th Passthrue     [2, (1)]             *[3, 4, 5, 6, 8, 45]*
+                        ^
+                        l
+                                            *[1, 2, 3, 5, 6, 8, 45]*
                             
 ######Time Complexity and Stack Breakdown
 *Quicksort time complexity: 5 passthroughs over n which is about n/2.
