@@ -20,6 +20,7 @@ the array at index *j*, then swap the adjacent elements--element at index *j* mi
 Illustration for each passthru: 
 
 ######Time Complexity and Stack Breakdown
+*The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).
 
 ######First Analysis
 
