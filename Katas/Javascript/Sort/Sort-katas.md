@@ -2,6 +2,32 @@
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/bubble-sort/)
 *Of the five types of sorting algorithms covered in this guide, Bubble sort is the simplest but also the most inefficient. Bubble sort swaps adjacent elements if they are in the wrong order and does so until an entire passthrough is completed without any swaps occuring.
 
+1. Define array *arr*, `[4, 45, 2, 3, 7, 1]`.
+
+2. Define a function called `bubbleSort` and pass in the *arr* argument.
+
+3. Inside the function create a for loop and set the initializer *i* to array length - 1, set the conditional at *i is greater than or equal 
+to 0 and set the final expression to decrement by one, *i--*.
+
+4. Add a nested for loop. Set the initializer, *j*, equal to 1, set the conditional to be j less than or equal to i and set the final expression
+to increment *j* by one. 
+
+5. Inside of the nested loop, create a conditional statement. Set the condition as follows: if the array at index *j* minus *i* is greater than
+the array at index *j*, then swap the adjacent elements--element at index *j* minus *i* with element at index *j*.
+
+6. After the outer loop has completed iterating, return the array.
+
+Illustration for each passthru: 
+
+######Time Complexity and Stack Breakdown
+
+######First Analysis
+
+######Second Analysis
+
+######Complete Analysis
+
+
 ### Selection Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/selection-sort)
 *Description: with this implementation of the selection sort method, you will need two for loops, the nested loop will be used as a pointer to check for the lowest value in the array and the outer loop will be used to shift the start of the next passthru by one. These are the steps to follow:
@@ -18,6 +44,16 @@ to be the value of the current index.
 4. Once you've iterated thru the array n times and completed the passthru, swap the value from the first index with the value of the last index that was set to be the lowest value in the array. 
 
 5. The start of subsequent passthrus will shift incrementally by one. That will be the outer loop's function.
+
+6. Illustration for each passthru: 
+
+######Time Complexity and Stack Breakdown
+
+######First Analysis
+
+######Second Analysis
+
+######Complete Analysis
 
 ### Insertion Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/insertion-sort)
@@ -36,6 +72,16 @@ to be the value of the current index.
 6. Once the temp value is greater than the value at the current index, position, the while loop becomes false and the temp value is inserted into the cell at the current index, `arr[position] = tempValue`.
 
 7. Return the array when both loops have completed iterating. 
+
+8. Illustration for each passthru: 
+
+######Time Complexity and Stack Breakdown
+
+######First Analysis
+
+######Second Analysis
+
+######Complete Analysis
 
 ### Merge Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort)
@@ -60,6 +106,16 @@ to be the value of the current index.
 9. If the condition is false, push the value of the right array at indexRight to the result array and increment the value of indexRight by one.
 
 10. If the while loop's boolean value is false, return the concatenatenation of the left array from indexLeft on and the right array from indexRight on and concatenate that with the result array.
+
+11. Illustration for each passthru: 
+                                        `[13, 2, 56, 4, 1]`
+                                        
+                                        `[13, 2]`  `[56, 4, 1]`
+
+                                        `[13]` `[2]` `[56]` `[4, 1]`
+
+                                        `[13]` `[2]` `[56]` `[4]` `[1]`
+
 
 ######Time Complexity and Stack Breakdown
 When it comes to recursion, you're going to deal with function calls on top of function calls(or nested calls). Each of these calls are added into an internal data structure called execution context or call stack. If you're familiar with stacks, you'll know that the flow of data in and out of it is last in first out(LIFO). For example, lets say we have in our recursion function, we have a total of three recursive calls. The call stack would look something like this: `[func(), func(), func()]`. If there are multiple calls, such is the case with recursive functions, a call is dependent on its nested call. Therefore, each preceding function is paused until the call ahead of it has completed executing. To complete the execution of each call, we start popping the stack, in this case, we would start with index 3. Once we get a returned value from index 3 call, the call at index 2 can now proceed and complete its execution and so forth. We can examine this process with merge sort, specifically applying this method with the `[13, 2, 56, 4, 1]` array. 
@@ -95,24 +151,24 @@ Since were aim to sort half of an array, we can conclude the time complexity for
 
 6. Illustration for each passthru:
 
-     1st Passthru                       [4, 8, 3, 45, 5, 2, 1, (6)]  // partition around 6
+     1st Passthru                       `[4, 8, 3, 45, 5, 2, 1, (6)]`  // partition around 6
                                          ^    /           \ ^
                                          l   /             \r
                                             /               \
                                            /                 \
-     2nd Passthru          [4, 1, 3, 2, (5)] // partition    [8, 45] 
-                            ^         ^ /     around 5         
-                            l         r/ 
+     2nd Passthru          `[4, 1, 3, 2, (5)]` // partition    `[8, 45]` 
+                            ^        ^  /     around 5         
+                            l        r / 
                                       /
-     3rd Passthru        [2, 1, 3, (4)]      *[5, 6, 8, 45]*               
+     3rd Passthru        `[2, 1, 3, (4)]`      *[5, 6, 8, 45]*               
                           ^     ^   /
                           l     r  /
                                   /                       
-     4th Passthru       [2, 1, (3)]         *[4, 5, 6, 8, 45]*
+     4th Passthru       `[2, 1, (3)]`         *[4, 5, 6, 8, 45]*
                          ^  ^   /
                          l  r  /
                               /
-     5th Passthrue     [2, (1)]             *[3, 4, 5, 6, 8, 45]*
+     5th Passthrue     `[2, (1)]`             *[3, 4, 5, 6, 8, 45]*
                         ^
                         l
                                             *[1, 2, 3, 5, 6, 8, 45]*
