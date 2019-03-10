@@ -121,20 +121,20 @@ to be the value of the current index.
 ######Time Complexity and Stack Breakdown
 When it comes to recursion, you're going to deal with function calls on top of function calls(or nested calls). Each of these calls are added into an internal data structure called execution context or call stack. If you're familiar with stacks, you'll know that the flow of data in and out of it is last in first out(LIFO). For example, lets say we have in our recursion function, we have a total of three recursive calls. The call stack would look something like this: `[func(), func(), func()]`. If there are multiple calls, such is the case with recursive functions, a call is dependent on its nested call. Therefore, each preceding function is paused until the call ahead of it has completed executing. To complete the execution of each call, we start popping the stack, in this case, we would start with index 3. Once we get a returned value from index 3 call, the call at index 2 can now proceed and complete its execution and so forth. We can examine this process with merge sort, specifically applying this method with the `[13, 2, 56, 4, 1]` array. 
 
-Let's work are way thru the each recursive call, starting with the mergeSort(left) half:
+######First Analysis
+Let's work are way thru each recursive call, starting with the first argument in the merge call--mergeSort(left):
 Step 1: For the first call, we get the following return: `left = [13, 2]`, `right = [56, 4, 1]`.
 Step 2: The second call returns `left = [13]`, `right = [2]`.
 
-######First Analysis
-It took two steps to get to return the base case. Now let's work thru the second half recursive call, mergeSort(right):
+Now let's work thru the second half recursive call, mergeSort(right):
 Step 1: For the first call, we get the following return: `left = [56]`, `right = [4, 1]`.
 Step 2: The second call returns `left = [4]`, `right = [1]`.
 
 ######Second Analysis
-This recursive call took two steps, which also gives a time complexity of n/2.
+Each half recursive calls took half of n steps to get to the base case, which also gives a time complexity of n/2.
 
 ######Complete Analysis
-Since were aim to sort half of an array, we can conclude the time complexity for subdividing one half recursively is n/2 steps. Because there are two halves we're working with: mergeSort(left) and mergeSort(right) we arrive at 2(n/2).(breakdown how we arrive at O(n log n)).
+Since the aim is the halves of a given array, we can conclude the time complexity for subdividing a half recursively is n/2 steps. Because there are two halves we're working with: mergeSort(left) and mergeSort(right) we arrive at 2(n/2).
 
 ### Quick Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/quick-sort)
