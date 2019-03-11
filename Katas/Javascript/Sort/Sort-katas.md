@@ -108,15 +108,21 @@ to be the value of the current index.
 
 10. If the while loop's boolean value is false, return the concatenatenation of the left array from indexLeft on and the right array from indexRight on and concatenate that with the result array.
 
-11. Illustration for each passthru: 
-                                        `[13, 2, 56, 4, 1]`
+11. 6. Illustration for each passthru(recurssion call):
+     1st Passthru                       (1)`[13, 2, 56, 4, 1]`
                                         
-                                        `[13, 2]`  `[56, 4, 1]`
+                                         *Left Half*         *Right Half*
+     2nd Passthru                       (2)`[13, 2]`       (4)`[56, 4, 1]`
 
-                                        `[13]` `[2]` `[56]` `[4, 1]`
+     3rd Passthru                       (3)`[13]` `[2]`    (5)`[56]` `[4, 1]`
 
-                                        `[13]` `[2]` `[56]` `[4]` `[1]`
+     4th Passthru                       (4)`[2, 13]`       (6)`[56]` `[4]` `[1]`
 
+     5th Passthru                                          (7)`[56]` `[1, 4]`
+
+     6th Passthru                                          (8)`[1, 4, 56]`
+
+     7th Passthru                        (9)`[1, 2, 4, 13, 56]`
 
 ######Time Complexity and Stack Breakdown
 When it comes to recursion, you're going to deal with function calls on top of function calls(or nested calls). Each of these calls are added into an internal data structure called execution context or call stack. If you're familiar with stacks, you'll know that the flow of data in and out of it is last in first out(LIFO). For example, lets say we have in our recursion function, we have a total of three recursive calls. The call stack would look something like this: `[func(), func(), func()]`. If there are multiple calls, such is the case with recursive functions, a call is dependent on its nested call. Therefore, each preceding function is paused until the call ahead of it has completed executing. To complete the execution of each call, we start popping the stack, in this case, we would start with index 3. Once we get a returned value from index 3 call, the call at index 2 can now proceed and complete its execution and so forth. We can examine this process with merge sort, specifically applying this method with the `[13, 2, 56, 4, 1]` array. 
@@ -150,7 +156,7 @@ Since the aim is the halves of a given array, we can conclude the time complexit
 
 5. You can partition the array and treat the elements on either side of p as their own sub array.
 
-6. Illustration for each passthru:
+6. Illustration for each passthru(recurssion call):
 
      1st Passthru                       `[4, 8, 3, 45, 5, 2, 1, (6)]`  // partition around 6
                                          ^    /           \ ^

@@ -30,7 +30,7 @@ console.log(bubbleSort());
 ----------|-------|----
    O(n^2)   |  O(n^2) |O(n^2)
 
-######Challenge
+######Challenge 
 Given an array of positive integers, sort the elements using selection sort.
 ```
 function selectionSort(arr = [23, 233, 6, 1, 75, 3, 2, 7]){
