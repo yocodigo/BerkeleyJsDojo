@@ -19,7 +19,18 @@ the array at index *j*, then swap the adjacent elements--element at index *j* mi
 
 Illustration for each passthru: 
 
-1st Passthru      `[]
+1st Passthru      `[4, 45, 2, 3, 7, 1]`
+                    ^   ^
+
+2nd Passthru      `[4, 2, 3, 7, 1, 45]`
+
+3rd Passthru      `[2, 3, 4, 1, 7, 45]`
+
+4th Passthru      `[2, 3, 1, 4, 7, 45]`
+
+5th Passthru      `[2, 1, 3, 4, 7, 45]`
+
+6th Passthru      `[1, 2, 3, 4, 7, 45]`
 
 ######Time Complexity and Stack Breakdown
 *The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).

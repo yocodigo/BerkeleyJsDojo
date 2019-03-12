@@ -13,6 +13,8 @@ function bubbleSort(arr = [4, 45, 2, 3, 7, 1]) {
   const len = arr.length;
   for(let i = len - 1; i  >= 0; i--){
     for(let j = 1; j <= i; j++) {        
+      const leftPointer = arr[j-1],
+            rightPointer = arr[j];
       if(arr[j-1] > arr[j]) {
         [arr[j-1], arr[j]] = [arr[j], arr[j-1]];
       }
