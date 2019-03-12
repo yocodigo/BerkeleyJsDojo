@@ -19,6 +19,8 @@ the array at index *j*, then swap the adjacent elements--element at index *j* mi
 
 Illustration for each passthru: 
 
+1st Passthru      `[]
+
 ######Time Complexity and Stack Breakdown
 *The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).
 
@@ -108,7 +110,7 @@ to be the value of the current index.
 
 10. If the while loop's boolean value is false, return the concatenatenation of the left array from indexLeft on and the right array from indexRight on and concatenate that with the result array.
 
-11. 6. Illustration for each passthru(recurssion call):
+11. Illustration for each passthru(recurssion call):
      1st Passthru                       (1)`[13, 2, 56, 4, 1]`
                                         
                                          *Left Half*         *Right Half*
