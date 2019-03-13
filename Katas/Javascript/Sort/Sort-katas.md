@@ -20,9 +20,26 @@ the array at index *j*, then swap the adjacent elements--element at index *j* mi
 Illustration for each passthru: 
 
 1st Passthru      `[4, 45, 2, 3, 7, 1]`
-                    ^   ^
+               (1)  ^   ^
+
+                  `[4, 2, 45, 3, 7, 1]`
+               (2)     ^   ^  
+
+                  `[4, 2, 3, 45, 7, 1]`
+               (3)        ^   ^
+
+                  `[4, 2, 3, 7, 45, 1]`
+               (4)           ^   ^    
+
+                  `[4, 2, 3, 7, 1, 45]`
+               (5)               ^  ^    
 
 2nd Passthru      `[4, 2, 3, 7, 1, 45]`
+               (1)  ^  ^
+
+                  `[4, 2, 3, 7, 1, 45]`
+               (1)  ^  ^
+
 
 3rd Passthru      `[2, 3, 4, 1, 7, 45]`
 
