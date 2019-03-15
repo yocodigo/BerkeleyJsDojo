@@ -50,12 +50,64 @@ Illustration for each passthru:
                (10)              ^  ^
 
 3rd Passthru      `[2, 3, 4, 1, 7, 45]`
+              (11)  ^  ^   
+
+                  `[2, 3, 4, 1, 7, 45]`
+              (12)     ^  ^   
+
+                  `[2, 3, 1, 4, 7, 45]`
+              (13)        ^  ^
+
+                  `[2, 3, 1, 4, 7, 45]`
+              (14)           ^  ^      
+
+                  `[2, 3, 1, 4, 7, 45]`
+              (15)              ^  ^      
 
 4th Passthru      `[2, 3, 1, 4, 7, 45]`
+              (16)  ^  ^      
 
-5th Passthru      `[2, 1, 3, 4, 7, 45]`
+                  `[2, 1, 3, 4, 7, 45]`
+              (17)     ^  ^      
+
+                  `[2, 1, 3, 4, 7, 45]`
+              (18)        ^  ^      
+
+                  `[2, 1, 3, 4, 7, 45]`
+              (19)           ^  ^          
+
+                  `[2, 1, 3, 4, 7, 45]`
+              (20)              ^  ^      
+
+5th Passthru      `[1, 2, 3, 4, 7, 45]`
+              (20)  ^  ^      
+
+                  `[1, 2, 3, 4, 7, 45]`
+              (21)     ^  ^      
+
+                  `[1, 2, 3, 4, 7, 45]`
+              (22)        ^  ^      
+              
+                  `[1, 2, 3, 4, 7, 45]`
+              (23)           ^  ^      
+              
+                  `[1, 2, 3, 4, 7, 45]`
+              (24)               ^  ^      
 
 6th Passthru      `[1, 2, 3, 4, 7, 45]`
+              (25)  ^  ^      
+
+                  `[1, 2, 3, 4, 7, 45]`
+              (26)     ^  ^      
+
+                  `[1, 2, 3, 4, 7, 45]`
+              (27)        ^  ^      
+              
+                  `[1, 2, 3, 4, 7, 45]`
+              (28)           ^  ^      
+              
+                  `[1, 2, 3, 4, 7, 45]`
+              (29)
 
 ######Time Complexity and Stack Breakdown
 *The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).
@@ -197,26 +249,26 @@ Since the aim is the halves of a given array, we can conclude the time complexit
 6. Illustration for each passthru(recurssion call):
 
      1st Passthru                       `[4, 8, 3, 45, 5, 2, 1, (6)]`  // partition around 6
-                                         ^    /           \ ^
-                                         l   /             \r
+                                          ^   /           \  ^
+                                          l  /             \ r
                                             /               \
                                            /                 \
      2nd Passthru          `[4, 1, 3, 2, (5)]` // partition    `[8, 45]` 
-                            ^        ^  /     around 5         
-                            l        r / 
+                             ^        ^ /     around 5         
+                             l        r/ 
                                       /
      3rd Passthru        `[2, 1, 3, (4)]`      *[5, 6, 8, 45]*               
-                          ^     ^   /
-                          l     r  /
+                           ^     ^  /
+                           l     r /
                                   /                       
      4th Passthru       `[2, 1, (3)]`         *[4, 5, 6, 8, 45]*
-                         ^  ^   /
-                         l  r  /
+                          ^  ^  /
+                          l  r /
                               /
      5th Passthrue     `[2, (1)]`             *[3, 4, 5, 6, 8, 45]*
-                        ^
-                        l
-                                            *[1, 2, 3, 5, 6, 8, 45]*
+                         ^
+                         l
+                                              *[1, 2, 3, 5, 6, 8, 45]*
                             
 ######Time Complexity and Stack Breakdown
 *Quicksort time complexity: 5 passthroughs over n which is about n/2.
