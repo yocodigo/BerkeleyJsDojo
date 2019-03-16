@@ -123,14 +123,11 @@ Illustration for each passthru:
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/selection-sort)
 *Description: with this implementation of the selection sort method, you will need two for loops, the nested loop will be used as a pointer to check for the lowest value in the array and the outer loop will be used to shift the start of the next passthru by one. These are the steps to follow:
 
-1. Define a variable's value to the first index' element. This variable will be used to temporarily 
-set the lowest value in the array. 
+1. Define a variable's value to the first index' element. This variable will be used to temporarily set the lowest value in the array. 
 
-2. Check every cell in an array from left to right. That will be handled by the nested loop. As 
-you iterate thru the array, check the value of each index. 
+2. Check every element in an array from left to right. That will be handled by the nested loop. As you iterate thru the array, check the value of each index. 
 
-3. If the current index has a lower value than the current lowest set value, reassign your variable 
-to be the value of the current index. 
+3. If the current index has a lower value than the current lowest set value, reassign your variable to be the value of the current index. 
 
 4. Once you've iterated thru the array n times and completed the passthru, swap the value from the first index with the value of the last index that was set to be the lowest value in the array. 
 
@@ -138,6 +135,14 @@ to be the value of the current index.
 
 6. Illustration for each passthru: 
 
+1st Passthru        `[23, 233, 6, 1, 75, 3, 2, 7]`                    
+               (1)    ^    ^
+               
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`
+               
+
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`
+               (2)     
 ######Time Complexity and Stack Breakdown
 
 ######First Analysis
