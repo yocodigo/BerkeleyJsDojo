@@ -35,13 +35,13 @@ Given an array of positive integers, sort the elements using selection sort.
 ```
 function selectionSort(arr = [23, 233, 6, 1, 75, 3, 2, 7]){
   for(let value of arr){    
-    let [minIdx, i] = [arr.indexOf(value), arr.indexOf(value)];    
-    for(let index = i + 1; index < arr.length; index++){
-      if(arr[minIdx] > arr[index]){ // if the index pointer has a value less than value at minIdx pointer...
-        minIdx = index; // ...make minIdx equal to index
+    let [minIdx, outer] = [arr.indexOf(value), arr.indexOf(value)];    
+    for(let inner = outer + 1; inner < arr.length; inner++){
+      if(arr[minIdx] > arr[inner]){ // if the inner pointer has a value less than value at minIdx pointer...
+        minIdx = inner; 
       }
     }
-    [arr[minIdx], arr[i]] = [arr[i], arr[minIdx]]; // swap the value at mimIdx with the value at the first index in the array   
+    [arr[minIdx], arr[outer]] = [arr[outer], arr[minIdx]]; // swap the mimIdx element with the outerPointer element   
   }  
   return arr;
 }
