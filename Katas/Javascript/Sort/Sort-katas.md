@@ -135,92 +135,94 @@ Illustration for each passthru:
 
 6. Illustration for each passthru: 
 
-1st Passthru        `[23, 233, 6, 1, 75, 3, 2, 7]`                    
-               (1)    *^    ^
-               
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
-               (2)    *^       ^
+-Note: the lowest number(minVal element) gets reset to the element at outer pointer at the start of every passthru
 
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
+1st Passthru        `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is the 23                 
+               (1)    *^   ^
+               
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 6
+               (2)     ^       ^
+
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 1
                (3)     ^       *  ^
 
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
-               (4)     ^          *  ^
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 1
+               (4)                *  ^
 
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
-               (5)     ^          *      ^
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 1
+               (5)                *      ^
 
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
-               (6)     ^          *         ^
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 1
+               (6)                *         ^
 
-                    `[23, 233, 6, 1, 75, 3, 2, 7]`
-               (7)     ^          *            ^
+                    `[23, 233, 6, 1, 75, 3, 2, 7]`   *lowest number is 1
+               (7)                *            ^
 
-2nd Passthru        `[1, 233, 6, 23, 75, 3, 2, 7]`
+2nd Passthru        `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number set initially to 233. After comparison, lowest number changed to 6
                (8)        *^  ^                                  
 
-                    `[1, 233, 6, 23, 75, 3, 2, 7]`
+                    `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number is 6
                (9)        ^   *   ^                                  
 
-                    `[1, 233, 6, 23, 75, 3, 2, 7]`
+                    `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number is 6
                (10)       ^   *       ^                                  
 
-                    `[1, 233, 6, 23, 75, 3, 2, 7]`
+                    `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number is 3
                (11)       ^   *          ^                                  
 
-                    `[1, 233, 6, 23, 75, 3, 2, 7]`
+                    `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number is 2
                (12)       ^              *  ^                                  
 
-                    `[1, 233, 6, 23, 75, 3, 2, 7]`
+                    `[1, 233, 6, 23, 75, 3, 2, 7]`   *lowest number is 2
                (13)       ^                 *  ^                                  
 
-3rd Passthru        `[1, 2, 6, 23, 75, 3, 233, 7]`
+3rd Passthru        `[1, 2, 6, 23, 75, 3, 233, 7]`   *lowest number is 6
                (14)        *^   ^                                  
 
-                    `[1, 2, 6, 23, 75, 3, 233, 7]`
+                    `[1, 2, 6, 23, 75, 3, 233, 7]`  *lowest number is 6
                (15)        *^       ^                                  
 
-                    `[1, 2, 6, 23, 75, 3, 233, 7]`
+                    `[1, 2, 6, 23, 75, 3, 233, 7]`  *lowest number is 3
                (16)        *^          ^                                  
 
-                    `[1, 2, 6, 23, 75, 3, 233, 7]`
+                    `[1, 2, 6, 23, 75, 3, 233, 7]`  *lowest number is 3
                (17)         ^          *   ^                                  
 
-                    `[1, 2, 6, 23, 75, 3, 233, 7]`
+                    `[1, 2, 6, 23, 75, 3, 233, 7]`  *lowest number is 3
                (18)         ^          *       ^                                  
                
 
-4th Passthru        `[1, 2, 3, 23, 75, 6, 233, 7]`
+4th Passthru        `[1, 2, 3, 23, 75, 6, 233, 7]`  *lowest number is 23
                (19)            *^   ^                                  
 
-                    `[1, 2, 3, 23, 75, 6, 233, 7]`
+                    `[1, 2, 3, 23, 75, 6, 233, 7]`  *lowest number is 6
                (20)            *^      ^                                  
 
-                    `[1, 2, 3, 23, 75, 6, 233, 7]`
+                    `[1, 2, 3, 23, 75, 6, 233, 7]`  *lowest number is 6
                (21)             ^      *   ^                                  
 
-                    `[1, 2, 3, 23, 75, 6, 233, 7]`
+                    `[1, 2, 3, 23, 75, 6, 233, 7]`  *lowest number is 6
                (22)             ^      *       ^                                  
 
-5th Passthru        `[1, 2, 3, 6, 75, 23, 233, 7]`
+5th Passthru        `[1, 2, 3, 6, 75, 23, 233, 7]`  *lowest number set initially to 75. After comparison, lowest number changed to 23
                (23)               *^   ^                                  
 
-                    `[1, 2, 3, 6, 75, 23, 233, 7]`
+                    `[1, 2, 3, 6, 75, 23, 233, 7]`  *lowest number is 23
                (24)                ^   *   ^                                                 
 
-                    `[1, 2, 3, 6, 75, 23, 233, 7]`
+                    `[1, 2, 3, 6, 75, 23, 233, 7]`  *lowest number is 7
                (25)                ^          *^      
 
-6th Passthru        `[1, 2, 3, 6, 7, 23, 233, 75]`
+6th Passthru        `[1, 2, 3, 6, 7, 23, 233, 75]`  *lowest number is 23
                (26)                  *^   ^      
 
-                    `[1, 2, 3, 6, 7, 23, 233, 75]`
+                    `[1, 2, 3, 6, 7, 23, 233, 75]`  *lowest number is 23
                (27)                  *^        ^      
 
-7th Passthru        `[1, 2, 3, 6, 7, 23, 233, 75]`
+7th Passthru        `[1, 2, 3, 6, 7, 23, 233, 75]`  *lowest number set initially to 233. After comparison, lowest number changed to 75
                (28)                       *^   ^      
 
-                    `[1, 2, 3, 6, 7, 23, 75, 233]`
+                    `[1, 2, 3, 6, 7, 23, 75, 233]`  
                (29)                       
 
 ######Time Complexity and Stack Breakdown
