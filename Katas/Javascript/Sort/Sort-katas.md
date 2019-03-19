@@ -253,6 +253,16 @@ Illustration for each passthru:
 
 8. Illustration for each passthru: 
 
+1st Passthru       (1) `[11, 34, 6, 812, 2, 5, 64, 33]`
+
+2nd Passthru   
+
+3rd Passthru
+
+4th Passthru
+
+                       `[2, 5, 6, 11, 33, 34, 64, 812]`
+
 ######Time Complexity and Stack Breakdown
 
 ######First Analysis
