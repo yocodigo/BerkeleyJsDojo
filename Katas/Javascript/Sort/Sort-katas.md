@@ -112,12 +112,6 @@ Illustration for each passthru:
 ######Time Complexity and Stack Breakdown
 *The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).
 
-######First Analysis
-
-######Second Analysis
-
-######Complete Analysis
-
 
 ### Selection Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/selection-sort)
@@ -227,11 +221,7 @@ Illustration for each passthru:
 
 ######Time Complexity and Stack Breakdown
 
-######First Analysis
 
-######Second Analysis
-
-######Complete Analysis
 
 ### Insertion Sort
 *[documented here](https://guide.freecodecamp.org/algorithms/sorting-algorithms/insertion-sort)
