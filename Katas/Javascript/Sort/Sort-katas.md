@@ -220,7 +220,7 @@ Illustration for each passthru:
                (29)                       
 
 ######Time Complexity and Stack Breakdown
-
+*The nested loop iterates n times and the outer loop iterations give it approximately n passthrus, hence giving it a time complexity of O(n^2).
 
 
 ### Insertion Sort
