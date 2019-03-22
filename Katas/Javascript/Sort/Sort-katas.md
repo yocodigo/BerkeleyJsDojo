@@ -244,27 +244,32 @@ Illustration for each passthru:
 8. Illustration for each passthru: 
 
 1st Passthru        (1) `[11, 34, 6, 812, 2, 5, 64, 33]`
-                           ^   ^
+                               ^
                            
-                    (2) `[11, 34, 6, 812, 2, 5, 64, 33]`
-                           ^      ^
+                    (2) `[11, 34, 6, 812, 2, 5, 64, 33]`  *6 is less than 11 --> shift 34 and 11 to the right then insert 6
+                                  ^
 
-                    (3) `[6, 34, 11, 812, 2, 5, 64, 33]`
-                          ^           ^       
+                    (3) `[6, 11, 34, 812, 2, 5, 64, 33]`
+                                      ^       
 
-                    (4) `[6, 34, 11, 812, 2, 5, 64, 33]`
-                          ^               ^             
+                    (4) `[6, 34, 11, 812, 2, 5, 64, 33]` *2 is less than 6 --> shift 812, 11, 34 and 6 to the right then insert 2
+                                          ^             
 
-                    (5) `[2, 34, 11, 812, 6, 5, 64, 33]`
-                          ^                  ^                            
+                    (5) `[2, 6, 34, 11, 812, 5, 64, 33]` *5 is less than 6 --> shift 812, 11, 34, and 6 to the right then insert 5
+                                             ^                            
 
-                    (6) `[2, 34, 11, 812, 6, 5, 64, 33]`
-                          ^                      ^                        
+                    (6) `[2, 5, 6, 34, 11, 812, 64, 33]` *64 is less than 812 --> shift 812 to the right then insert 64
+                                                 ^                        
 
-                    (7) `[2, 34, 11, 812, 6, 5, 64, 33]`
-                          ^                          ^                                                               
+                    (7) `[2, 34, 11, 812, 6, 5, 64, 812]`
+                                                     ^                                                               
 
 2nd Passthru                                 
+                    (8) `[2, 34, 11, 812, 6, 5, 64, 33]`
+
+
+
+
 
 3rd Passthru
 
