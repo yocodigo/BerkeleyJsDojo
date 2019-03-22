@@ -109,7 +109,7 @@ Illustration for each passthru:
                   `[1, 2, 3, 4, 7, 45]`
               (29)
 
-######Time Complexity and Stack Breakdown
+######Time Complexity
 *The nested loop iterates n times and the outer loop iterations give it n passthrus, hence giving it a time complexity of O(n^2).
 
 
@@ -219,7 +219,7 @@ Illustration for each passthru:
                     `[1, 2, 3, 6, 7, 23, 75, 233]`  
                (29)                       
 
-######Time Complexity and Stack Breakdown
+######Time Complexity
 *The nested loop iterates n times and the outer loop iterations give it approximately n passthrus, hence giving it a time complexity of O(n^2).
 
 
@@ -243,9 +243,28 @@ Illustration for each passthru:
 
 8. Illustration for each passthru: 
 
-1st Passthru       (1) `[11, 34, 6, 812, 2, 5, 64, 33]`
+1st Passthru        (1) `[11, 34, 6, 812, 2, 5, 64, 33]`
+                           ^   ^
+                           
+                    (2) `[11, 34, 6, 812, 2, 5, 64, 33]`
+                           ^      ^
 
-2nd Passthru   
+                    (3) `[6, 34, 11, 812, 2, 5, 64, 33]`
+                          ^           ^       
+
+                    (4) `[6, 34, 11, 812, 2, 5, 64, 33]`
+                          ^               ^             
+
+                    (5) `[2, 34, 11, 812, 6, 5, 64, 33]`
+                          ^                  ^                            
+
+                    (6) `[2, 34, 11, 812, 6, 5, 64, 33]`
+                          ^                      ^                        
+
+                    (7) `[2, 34, 11, 812, 6, 5, 64, 33]`
+                          ^                          ^                                                               
+
+2nd Passthru                                 
 
 3rd Passthru
 
